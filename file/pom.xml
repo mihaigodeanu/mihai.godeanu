@@ -17,6 +17,11 @@
             <artifactId>api</artifactId>
             <version>0.1</version>
         </dependency>
+        <dependency>
+            <groupId>ro.teamnet.apps.light-logger</groupId>
+            <artifactId>format</artifactId>
+            <version>0.1</version>
+        </dependency>
     </dependencies>
 
 </project>

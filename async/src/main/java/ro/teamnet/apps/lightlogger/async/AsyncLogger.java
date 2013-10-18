@@ -2,14 +2,20 @@ package ro.teamnet.apps.lightlogger.async;
 
 import ro.teamnet.apps.lightlogger.api.Logger;
 
-/**
- * @author dan.cioiu
- * @since 10/2/13
- */
 public class AsyncLogger implements Logger {
 
-    public void log(final String line){
-        throw new UnsupportedOperationException("to be implemented");
+    private Logger logger;
+
+    public AsyncLogger(Logger logger){
+        this.logger = logger;
     }
 
+    public void log(final String line){
+        //shortOperation(line);
+        new Thread(new Runnable() {
+            public void run(){
+                logger.log(line);//longOperation(line);
+            }
+        }).start();
+    }
 }
